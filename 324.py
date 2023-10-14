@@ -1,32 +1,38 @@
-n = int (input('Яку дію хочете зробити? \n 1 Додавання \n 2 Віднімання \n 3 Ділення \n 4 Множення \n '))
+button = int (input('Яку дію хочете зробити? \n 1 Додавання \n 2 Віднімання \n 3 Ділення \n 4 Множення \n '))
+text =  ('Не вірний символ, перевірте правильність вводу ‿︵‿ヽ(°□° )ノ︵‿︵')
+try:
+    q1 = float (input('Введіть число 1: '))
+except ValueError:
+     print(text)
 
 try:
-    q1 = int (input('Введіть число 1: '))
+    q2 = float(input('Введіть число 2: '))
 except ValueError:
-     print('Не вірний символ, перевірте правильність вводу')
+    print(text)
 
 try:
-    q2 = int(input('Введіть число 2: '))
-except ValueError:
-    print('Не вірний символ, перевірте правильність вводу')
 
+    if button == 1:
+        result = q1 + q2
+        p = 'додавання'
+        t = p
 
-if n == 1:
-    r = q1 + q2
-    p = 'додавання'
-    t = p
-if n == 2:
-    r = q1 - q2
-    l = 'віднімання'
-    t = l
-if n == 3:
-    r = float(q1 / q2)
-    m = 'ділення'
-    t = m
-if n == 4:
-    r = q1 * q2
-    n = 'множення'
-    t = n
+    if button == 2:
+        result = q1 - q2
+        l = 'віднімання'
+        t = l
 
-print ('Результат ',t,' = ',r)
+    if button == 3:
+        result = float(q1 / q2)
+        m = 'ділення'
+        t = m
 
+    if button == 4:
+        result = q1 * q2
+        n = 'множення'
+        t = n
+
+    print ('Результат ',t,' = ',result)
+
+except ZeroDivisionError:
+    print('Ділення на 0? Чумба, ти зовсім (╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻')
