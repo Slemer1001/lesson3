@@ -102,4 +102,3 @@
 #common_chars = [char for char in set(str1 + str2) if str1.count(char) == 1 and str2.count(char) == 1]
 
 #print(common_chars)
-
